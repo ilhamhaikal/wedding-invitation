@@ -1,0 +1,69 @@
+.event {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.event h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.ceremony, .reception {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s ease forwards;
+}
+
+.ceremony h3, .reception h3 {
+  font-size: 2rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.date, .time {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.venue {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.address {
+  color: #777;
+}
+
+.reception {
+  animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .event h2 {
+    font-size: 2rem;
+  }
+  
+  .ceremony h3, .reception h3 {
+    font-size: 1.5rem;
+  }
+  
+  .venue {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,69 @@
+.couple {
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  background-color: #fafafa;
+  flex-wrap: wrap;
+}
+
+.bride, .groom {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.groom {
+  animation-delay: 0.3s;
+}
+
+.bride {
+  animation-delay: 0.6s;
+}
+
+.bride img, .groom img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.bride img:hover, .groom img:hover {
+  transform: scale(1.05);
+}
+
+.bride h2, .groom h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.bride p, .groom p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.separator {
+  font-size: 3rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .couple {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .separator {
+    margin: 1rem 0;
+  }
+  
+  .bride img, .groom img {
+    width: 150px;
+    height: 150px;
+  }
+}

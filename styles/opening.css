@@ -1,0 +1,32 @@
+.opening {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.opening-content {
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.bismillah {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Arabic-Font', serif;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.message {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #666;
+}

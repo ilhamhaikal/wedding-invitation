@@ -1,0 +1,57 @@
+.qrcode {
+  padding: 6rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.qrcode h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.qrcode-container {
+  max-width: 400px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: scaleIn 1s ease forwards;
+}
+
+.qrcode-card {
+  background: #fafafa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.qrcode-card img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.qrcode-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .qrcode h2 {
+    font-size: 2rem;
+  }
+  .qrcode-card img {
+    width: 150px;
+    height: 150px;
+  }
+}
