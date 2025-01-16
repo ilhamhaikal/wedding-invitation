@@ -1,18 +1,30 @@
 .couple {
+  min-height: 100vh;
   padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #f5e6d3, #fff2e6);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 4rem;
-  background-color: #fafafa;
+  position: relative;
   flex-wrap: wrap;
 }
 
+/* Remove overlay */
+.couple::before {
+  display: none;
+}
+
 .bride, .groom {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .groom {
@@ -29,6 +41,8 @@
   border-radius: 50%;
   margin-bottom: 1.5rem;
   object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
@@ -37,19 +51,26 @@
 }
 
 .bride h2, .groom h2 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: #2c3e50;
   margin-bottom: 1rem;
 }
 
 .bride p, .groom p {
-  color: #666;
+  color: #34495e;
   line-height: 1.6;
 }
 
 .separator {
   font-size: 3rem;
-  color: #888;
+  color: #2c3e50;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
@@ -65,5 +86,73 @@
   .bride img, .groom img {
     width: 150px;
     height: 150px;
+  }
+  
+  .groom h2, .bride h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.clouds {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  will-change: transform;
+}
+
+.c1 { top: -20px; width: 250px; }
+.c2 { top: -15px; width: 200px; }
+.c3 { top: -25px; width: 230px; }
+.c4 { top: -10px; width: 220px; }
+
+.tree-left, .tree-right {
+  position: absolute;
+  bottom: -10px;
+  z-index: 1;
+}
+
+.tree-left {
+  left: 0;
+}
+
+.tree-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.bottom-decorations {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bottom-deco {
+  width: 400px;
+  height: auto;
+  margin: 0 -100px;
+}
+
+@media (max-width: 768px) {
+  .tree-left, .tree-right {
+    width: 100px;
+  }
+  
+  .bottom-deco {
+    width: 300px;
+    margin: 0 -80px;
   }
 }

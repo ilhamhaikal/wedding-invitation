@@ -1,8 +1,11 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
   background-image: url('/images/887710a0-b90a-11ee-9c5f-6bbbfa84b82d.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +13,8 @@
   color: #fff;
   position: relative;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .hero::before {
@@ -108,4 +113,11 @@
   .hero-subtitle {
     font-size: 1.2rem;
   }
+}
+
+/* Add to global.css or layout.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

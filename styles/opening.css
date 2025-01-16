@@ -3,20 +3,50 @@
   padding: 4rem 2rem;
   background-color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.flower-top, .flower-bottom {
+  position: absolute;
+  width: 200px;
+  opacity: 0.8;
+  z-index: 1;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.flower-top {
+  top: 20px;
+  right: 5px;
+  transform: rotate(180deg);
+}
+
+.flower-bottom {
+  bottom: 20px;
+  left: 5px;
 }
 
 .opening-content {
   max-width: 800px;
-  animation: fadeIn 1.5s ease-in;
+  z-index: 2;
+  animation: fadeIn 1.5s ease;
 }
 
 .bismillah {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
-  font-family: 'Arabic-Font', serif;
+  color: #333;
+  font-family: 'Harmattan', serif;
+}
+
+.divider {
+  width: 150px;
+  margin: 2rem auto;
 }
 
 .greeting {
@@ -29,4 +59,31 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .flower-top, .flower-bottom {
+    width: 150px;
+  }
+  
+  .bismillah {
+    font-size: 2.5rem;
+  }
+  
+  .divider {
+    width: 100px;
+  }
+  
+  .greeting {
+    font-size: 1.2rem;
+  }
+  
+  .message {
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
